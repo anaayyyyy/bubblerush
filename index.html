@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bubblerush</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family :Georgia, 'Times New Roman', Times, serif
+    font-weight: 900;
+    
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: display 0.5s ease-in-out;
+    background-image: url(https://cdn.pixabay.com/photo/2017/10/03/01/53/bubble-2811093_960_720.jpg);
+    background-size: cover;
+    /* display: none; */
+    
+}
+.cont{
+    height: 90%;
+    width: 90%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: rgb(154, 204, 211);
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 2);
+    
+}
+.hd{
+    
+    height: 5rem;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: rgb(141, 97, 182);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight:bolder;
+}
+.area{
+    width: 100%;
+    height: calc(100% - 5rem);
+    /* background-color: blueviolet; */
+    background-image: url(https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?cs=srgb&dl=pexels-veeterzy-114979.jpg&fm=jpg);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    
+}
+.elem{
+    width: 10rem;
+    height: 2rem;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.bubble{
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.bubble:hover{
+    background-color: rgb(236, 168, 236);
+    cursor: pointer;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-size: 1.7rem;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753_1280.jpg);
+    background-size: cover;
+    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+    background-blur: blur(10px); /* Fallback for browsers that do not support backdrop-filter */
+}
+
+
+.two{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.up{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -8rem;
+}
+.gname{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 0.5s infinite alternate;
+    
+}
+
+.animate
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #c549f7 0%,
+    #6deb82 29%,
+    #ff1361 67%,
+    #cc3ac0 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+   font-size: 8vw;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.tbton{
+    height: 3rem;
+    width: 10rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    background-color: hsl(216, 97%, 77%);
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    
+
+}
+.tbton:hover{
+    background-color: #290464;
+    color: aliceblue;
+}
+
+
+@media (max-width: 600px) {
+    #att{
+        font-size: 6vh; 
+    }
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+    </style>
+</head>
+<body>
+    <div class="main" id="content" style="display: none;">
+        <div class="cont">
+            <div class="hd" style="font-size: 1.3rem;">
+                <h4>Hit:</h4>
+                <div id="hitval" class="elem">0</div>
+                <h4>Timer:</h4>
+                <div id="timer1" class="elem">60</div>
+                <h4>Score:</h4>
+                <div id="scoreval" class="elem">0</div>
+
+            </div>
+            <div id="pbtm" class="area"></div>
+        </div>
+    </div>
+    <div class="two" id="twoo">
+        <div class="up">
+            <div class="gname">
+                <h4 class="animate" id="att">bubble - rush</h4>
+            </div>
+            <div class="tbton" onclick="togglePage()"><b>START PLAYING</b></div>
+
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        var timer = 60;
+var score = 0;
+var hitrn = 0;
+
+function togglePage() {
+    var content = document.getElementById('content');
+    
+    if (content.style.display === 'none') {
+        content.style.display = 'flex';
+        runtimer();
+        var bton = document.getElementById('twoo');
+        bton.style.display = 'none';
+        
+        
+    } else {
+        content.style.display = 'none';
+    }
+    
+
+}
+
+function inscore(){
+    score += 10 ;
+    document.querySelector("#scoreval").innerHTML = score;
+}
+
+function makebuble(){
+    var clutter = "";
+
+    for(var i=1; i<=132; i++){
+        var rn2 = Math.floor(Math.random()*10);
+        clutter += `<div class="bubble">${rn2}</div>`;
+    }
+document.querySelector(".area").innerHTML = clutter;
+}
+
+
+function runtimer(){
+    setInterval(function(){
+        if(timer>0){
+            timer--;
+            document.querySelector("#timer1").innerHTML = timer;
+        }
+        else{
+            clearInterval(timer);
+            document.querySelector("#pbtm").innerHTML=  `<h1>your score is ${score} </h1> `;
+        }
+    },1000);
+}
+
+function newhit(){
+    hitrn = Math.floor(Math.random()*10);
+    document.querySelector("#hitval").innerHTML = hitrn;
+}
+
+document.querySelector("#pbtm")
+.addEventListener("click",function(details){
+    var cn = Number(details.target.textContent);
+    if(cn===hitrn){
+        inscore();
+        makebuble();
+        newhit();
+    }
+}); 
+
+
+makebuble();
+newhit();
+
+    </script>
+</body>
+</html>
